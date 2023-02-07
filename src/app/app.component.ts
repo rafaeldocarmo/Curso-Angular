@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+  <app-title title="Texto Alterado no App Component pelo Input"></app-title>
+  <router-outlet></router-outlet>`
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
   public title = "Bem Vindo!" 
+  constructor() {}
+
+  ngOnInit(): void {
+    console.log(1)
+    setTimeout(() => {console.log(2)}, 5000)
+
+  }
 
 }
